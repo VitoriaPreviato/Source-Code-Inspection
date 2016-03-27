@@ -38,15 +38,25 @@ public class TicketMachine {
 
     public Iterator<Integer> getTroco() {
         return null;
-    }            
+    }
 
-    public String imprimir() throws SaldoInsuficienteException {
+    private void isSaldoEnough() throws SaldoInsuficienteException {
         if (saldo < precoDoBilhete) {
             throw new SaldoInsuficienteException();
         }
-        String result = "*****************\n";
-        result += "*** R$ " + saldo + ",00 ****\n";
-        result += "*****************\n";
-        return result;
+    }
+
+    public String imprimir() {
+
+        try {
+            isSaldoEnough();
+        } catch (SaldoInsuficienteException e) {
+            System.err.print(e);
+        } finally {
+            String result = "*****************\n";
+            result += "*** R$ " + saldo + ",00 ****\n";
+            result += "*****************\n";
+            return result;
+        }
     }
 }
