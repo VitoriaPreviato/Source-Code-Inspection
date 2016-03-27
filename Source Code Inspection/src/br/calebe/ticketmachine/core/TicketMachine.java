@@ -41,13 +41,11 @@ public class TicketMachine {
     }
 
     private void isSaldoEnough() throws SaldoInsuficienteException {
-        if (saldo < precoDoBilhete) {
+        if (saldo < precoDoBilhete) 
             throw new SaldoInsuficienteException();
-        }
     }
 
     public String imprimir() {
-
         try {
             isSaldoEnough();
         } catch (SaldoInsuficienteException e) {
