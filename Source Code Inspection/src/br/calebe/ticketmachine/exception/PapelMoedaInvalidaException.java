@@ -6,4 +6,11 @@ package br.calebe.ticketmachine.exception;
  */
 public class PapelMoedaInvalidaException extends Exception {
     
+    public PapelMoedaInvalidaException() {
+        super("A nota inserida não é válida");
+    }
+
+    public PapelMoedaInvalidaException(String message, Throwable throwable) {
+        super(message, throwable);
+    }    
 }
