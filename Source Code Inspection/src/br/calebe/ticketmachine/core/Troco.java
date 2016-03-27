@@ -55,4 +55,8 @@ class Troco {
         return new TrocoIterator(this);
     }
     
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
