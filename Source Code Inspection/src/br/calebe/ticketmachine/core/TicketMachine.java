@@ -52,6 +52,23 @@ public class TicketMachine {
             throw new SaldoInsuficienteException();
     }
 
+    public int getPrecoDoBilhete() {
+        return precoDoBilhete;
+    }
+
+    public void setPrecoDoBilhete(int precoDoBilhete) {
+        this.precoDoBilhete = precoDoBilhete;
+    }
+
+    public ArrayList<Integer> getPapelMoeda() {
+        return papelMoeda;
+    }
+
+    public void setPapelMoeda(ArrayList<Integer> papelMoeda) {
+        this.papelMoeda = papelMoeda;
+    }
+    
+
     public String imprimir() {
         try {
             isSaldoEnough();
