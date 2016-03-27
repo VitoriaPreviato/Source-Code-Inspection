@@ -7,20 +7,24 @@ import java.util.Iterator;
  */
 class TrocoIterator implements Iterator<PapelMoeda> {
 
-        protected Troco troco;
+        private Troco troco;
+        private PapelMoeda current;
+        private int indexCurrent;
 
         public TrocoIterator(Troco troco) {
             this.troco = troco;
+            indexCurrent = 0;
+            current = troco.getPapeisMoeda().get(0);
         }
 
+        public void first(){
+            indexCurrent = 0;
+            current = troco.getPapeisMoeda().get(0);           
+        }
+        
         @Override
         public boolean hasNext() {
-            for (int i = 5; i >= 0; i--) {
-                if (troco.getPapeisMoeda().get(i) != null) {
-                    return true;
-                }
-            }
-            return false;
+            return troco.getPapeisMoeda().get(indexCurrent+1)!=null;
         }
 
         @Override
