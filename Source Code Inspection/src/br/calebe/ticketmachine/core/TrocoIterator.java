@@ -25,8 +25,8 @@ class TrocoIterator implements Iterator<PapelMoeda> {
 
         @Override
         public PapelMoeda next() {
-            PapelMoeda ret = null;
-            for (int i = 6; i >= 0 && ret != null; i++) {
+            PapelMoeda ret = troco.getPapeisMoeda().get(5);
+            for (int i = 5; i >= 0 && ret != null; i--) {
                 if (troco.getPapeisMoeda().get(i) != null) {
                     ret = troco.getPapeisMoeda().get(i);
                     troco.getPapeisMoeda().set(i, null);
