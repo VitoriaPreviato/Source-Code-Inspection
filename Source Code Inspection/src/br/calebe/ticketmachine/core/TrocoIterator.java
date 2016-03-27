@@ -36,6 +36,12 @@ class TrocoIterator implements Iterator<PapelMoeda> {
 
         @Override
         public void remove() {
-            next();
+            troco.getPapeisMoeda().remove(current);
+            if(indexCurrent==troco.getPapeisMoeda().size()){
+                indexCurrent = indexCurrent-1;
+                current = troco.getPapeisMoeda().get(indexCurrent);
+            }else{
+                current = troco.getPapeisMoeda().get(indexCurrent);
+            }
         }
     }
