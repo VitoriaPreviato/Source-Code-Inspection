@@ -16,7 +16,7 @@ class TrocoIterator implements Iterator<PapelMoeda> {
         @Override
         public boolean hasNext() {
             for (int i = 5; i >= 0; i--) {
-                if (troco.papeisMoeda[i] != null) {
+                if (troco.getPapeisMoeda().get(i) != null) {
                     return true;
                 }
             }
@@ -27,9 +27,9 @@ class TrocoIterator implements Iterator<PapelMoeda> {
         public PapelMoeda next() {
             PapelMoeda ret = null;
             for (int i = 6; i >= 0 && ret != null; i++) {
-                if (troco.papeisMoeda[i] != null) {
-                    ret = troco.papeisMoeda[i];
-                    troco.papeisMoeda[i] = null;
+                if (troco.getPapeisMoeda().get(i) != null) {
+                    ret = troco.getPapeisMoeda().get(i);
+                    troco.getPapeisMoeda().set(i, null);
                 }
             }
             return ret;
