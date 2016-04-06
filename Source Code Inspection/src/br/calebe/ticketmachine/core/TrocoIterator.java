@@ -6,6 +6,7 @@ import java.util.Iterator;
  * @author Vitória
  */
 class TrocoIterator implements Iterator<PapelMoeda> {
+    
 
         private Troco troco;
         private PapelMoeda current;
