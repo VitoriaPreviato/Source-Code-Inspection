@@ -18,6 +18,7 @@ public class TicketMachine {
     public TicketMachine(int precoDoBilhete) {
         this.precoDoBilhete = precoDoBilhete;
         this.saldo = 0;
+        this.papelMoeda = new ArrayList();
         this.papelMoeda.add(2);
         this.papelMoeda.add(5);
         this.papelMoeda.add(10);
